@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de CEP</title>
+</head>
+<body>
+    <h1>Buscar Endereço por CEP</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if endereco %}
+        <h2>Endereço Encontrado:</h2>
+        <p><strong>Rua:</strong> {{ endereco.rua }}</p>
+        <p><strong>Bairro:</strong> {{ endereco.bairro }}</p>
+        <p><strong>Cidade:</strong> {{ endereco.cidade }}</p>
+        <p><strong>Estado:</strong> {{ endereco.estado }}</p>
+        <p><strong>CEP:</strong> {{ endereco.cep }}</p>
+    {% endif %}
+</body>
+</html>
