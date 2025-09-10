@@ -1,0 +1,10 @@
+{% extends 'viacep/base.html' %}
+{% block content %}
+<h2>Detalhes do Endereço</h2>
+<p><strong>Rua:</strong> {{ endereco.rua }}</p>
+<p><strong>Bairro:</strong> {{ endereco.bairro }}</p>
+<p><strong>Cidade:</strong> {{ endereco.cidade }}</p>
+<p><strong>Estado:</strong> {{ endereco.estado }}</p>
+<p><strong>CEP:</strong> {{ endereco.cep }}</p>
+<a href="{% url 'endereco_list' %}">Voltar para lista</a>
+{% endblock %}

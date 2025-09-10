@@ -1,0 +1,10 @@
+{% extends 'viacep/base.html' %}
+{% block content %}
+<h2>Excluir Endereço</h2>
+<p>Tem certeza que deseja excluir o endereço com CEP <strong>{{ object.cep }}</strong>?</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Confirmar</button>
+  <a href="{% url 'endereco_list' %}">Cancelar</a>
+</form>
+{% endblock %}

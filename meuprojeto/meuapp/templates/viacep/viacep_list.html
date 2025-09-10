@@ -1,0 +1,15 @@
+{% extends 'viacep/base.html' %}
+{% block content %}
+<h2>Endereços Salvos</h2>
+<ul>
+  {% for endereco in enderecos %}
+    <li>
+      <a href="{% url 'endereco_detail' endereco.pk %}">{{ endereco.cep }}</a>
+      ({{ endereco.cidade }} - {{ endereco.estado }}) |
+      <a href="{% url 'endereco_delete' endereco.pk %}">[Excluir]</a>
+    </li>
+  {% empty %}
+    <li>Nenhum endereço encontrado.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>ViaCEP Django</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'endereco_create' %}">Buscar CEP</a> |
+        <a href="{% url 'endereco_list' %}">Listar Endereços</a>
+    </nav>
+    <hr>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

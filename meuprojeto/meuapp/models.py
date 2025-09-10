@@ -8,5 +8,4 @@ class Endereco(models.Model):
     cep = models.CharField(max_length=20)
 
     def __str__(self):
-        return f"Rua: {self.rua}, Bairro: {self.bairro}, Cidade: {self.cidade}, Estado: {self.estado}, CEP: {self.cep}"
-
+        return f"{self.rua}, {self.bairro}, {self.cidade} - {self.estado} ({self.cep})"
