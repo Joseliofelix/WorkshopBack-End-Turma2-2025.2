@@ -1,9 +1,10 @@
-from django.urls import path
-from .views import EnderecoCreateView, EnderecoListView, EnderecoDetailView, EnderecoDeleteView
+from django.urls import path, include
+from rest_framework import routers
+from .viewsets import CepViewSet
+
+router = routers.DefaultRouter()
+router.register(r'ceps', CepViewSet, basename='cep')
 
 urlpatterns = [
-    path('', EnderecoCreateView.as_view(), name='endereco_create'),
-    path('list/', EnderecoListView.as_view(), name='endereco_list'),
-    path('detail/<int:pk>/', EnderecoDetailView.as_view(), name='endereco_detail'),
-    path('delete/<int:pk>/', EnderecoDeleteView.as_view(), name='endereco_delete'),
+    path('api/', include(router.urls)),
 ]
